@@ -1,0 +1,77 @@
+# 🚀 Task 1: Data Cleaning & Preprocessing
+
+## ✅ Objective
+Learn how to clean and prepare raw data for machine learning. The Titanic dataset was used to demonstrate the end-to-end process of data preprocessing.
+
+---
+
+## 🧰 Tools Used
+- Python
+- Pandas
+- NumPy
+- Seaborn & Matplotlib
+- Scikit-learn
+
+---
+
+## 📊 Dataset
+**Titanic Dataset**  
+Source: [Kaggle Titanic](https://www.kaggle.com/competitions/titanic/data)  
+Contains passenger data with attributes like age, gender, ticket class, fare paid, and survival status.
+
+---
+
+## 🔧 Steps Performed
+
+1. **Data Exploration**
+   - Loaded the dataset
+   - Identified null values and data types
+
+2. **Missing Value Handling**
+   - Dropped irrelevant columns: `Cabin`, `Ticket`, `Name`, `PassengerId`
+   - Imputed `Age` with median, and `Embarked` with mode
+
+3. **Categorical Encoding**
+   - Applied Label Encoding to `Sex` and `Embarked`
+
+4. **Feature Scaling**
+   - Used `StandardScaler` to normalize `Age` and `Fare`
+
+5. **Outlier Detection and Removal**
+   - Visualized boxplots for `Age` and `Fare`
+   - Removed outliers using the IQR method
+
+---
+
+## 📉 Boxplot Analysis
+
+![Boxplot Output](Output.png)
+
+- **Age:** Shows several outliers above the upper whisker, indicating some passengers were significantly older than average.
+- **Fare:** Shows a large number of high-end outliers — some passengers paid disproportionately high fares.
+- These outliers were removed using the Interquartile Range (IQR) filtering method to ensure data quality.
+
+---
+
+## 📈 Output Summary
+- **Original Dataset Shape:** `(891, 12)`
+- **Final Cleaned Dataset Shape:** e.g., `(850, 7)`
+- Categorical variables encoded, nulls handled, outliers removed, features standardized
+
+---
+
+## 🧠 Key Learnings
+- Identified and handled missing data effectively
+- Used encoding and scaling techniques for preprocessing
+- Understood the importance of outlier detection using visualization
+- Cleaned data is ready for machine learning model development
+
+---
+
+## 📁 Files Included
+- `main.py` – Python script for preprocessing
+- `Titanic-Dataset.csv` – Raw dataset
+- `README.md` – Task explanation and analysis
+- `boxplot_output.png` – Visual output of outlier analysis
+
+---
