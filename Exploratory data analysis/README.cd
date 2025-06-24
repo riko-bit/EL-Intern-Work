@@ -1,0 +1,88 @@
+# 📊 Task 2: Exploratory Data Analysis (EDA)
+
+## ✅ Objective
+The objective of this task is to explore and understand the Titanic dataset using summary statistics and various types of visualizations to identify relationships, trends, and potential anomalies in the data.
+
+---
+
+## 🧰 Tools Used
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+
+---
+
+## 📁 Dataset
+**Titanic Dataset**  
+Source: [Kaggle Titanic Competition](https://www.kaggle.com/competitions/titanic/data)  
+The dataset includes information about Titanic passengers such as age, gender, class, fare paid, and survival status.
+
+---
+
+## 🔍 Steps Performed
+
+1. **Data Cleaning**
+   - Dropped irrelevant columns: `Cabin`, `Ticket`, `Name`, `PassengerId`
+   - Handled missing values:
+     - `Age` filled with median
+     - `Embarked` filled with mode
+   - Encoded categorical features:
+     - `Sex`: male = 1, female = 0
+     - `Embarked`: S = 0, C = 1, Q = 2
+
+2. **Summary Statistics**
+   - Used `describe()` to view count, mean, std, min, max, etc.
+   - Noted that `Fare` is skewed and contains large outliers.
+
+3. **Histograms**
+   - Plotted histograms for all numerical features.
+   - Age distribution appears unimodal and right-skewed.
+   - Fare distribution is heavily right-skewed due to high-paying passengers.
+
+   ![Histograms](histograms.png)
+
+4. **Boxplots**
+   - Plotted `Age` and `Fare` boxplots to visualize outliers.
+   - Clear outliers were observed in both features.
+
+   ![Boxplot](boxplot_output.png)
+
+5. **Pairplot**
+   - Created pairplot for features: `Survived`, `Pclass`, `Sex`, `Age`, `Fare`.
+   - Survival is correlated with being female and first-class.
+
+   ![Pairplot](pairplot.png)
+
+6. **Correlation Matrix**
+   - Plotted heatmap of feature correlations.
+   - Observed:
+     - `Survived` positively correlates with `Fare`
+     - `Survived` negatively correlates with `Pclass`
+     - `Sex` and `Survived` show significant relationship
+
+   ![Correlation Matrix](correlation_matrix.png)
+
+---
+
+## 📈 Key Observations
+
+- **Females had higher survival rates**.
+- **First-class passengers** had better survival chances.
+- **Fare** has a long right tail — some passengers paid much more than others.
+- **Age** has a few high-end outliers, possibly older passengers or infants.
+- Strong patterns in class and gender affect survival outcomes.
+
+---
+
+## 📂 Files Included
+
+- `eda.py` – Python script with all EDA steps and labeled visualizations.
+- `Titanic-Dataset.csv` – Input dataset (place in same folder).
+- `histograms.png` – Histogram of all numerical features.
+- `boxplot_output.png` – Boxplot of Age and Fare.
+- `pairplot.png` – Pairplot showing feature interactions.
+- `correlation_matrix.png` – Heatmap of correlation between variables.
+- `README.md` – This documentation file.
+
+---
