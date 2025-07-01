@@ -1,0 +1,4 @@
+pandas
+NumPy
+matplotlib
+scikit-learn
